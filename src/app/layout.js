@@ -8,6 +8,7 @@ const RootLayout = ({ children }) => {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/profile-2d.svg" />
+        <link rel="apple-touch-icon" href="/profile-2d.svg" />
         <title>Sobahusn Portofolio</title>
       </head>
       <body>
