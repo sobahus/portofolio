@@ -5,8 +5,6 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { House, Award, User, FolderTree, Menu, X, Info } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import ThemeModeToggle from "./ToggleMode";
-import Profile from "./common/profile";
-import Link from "next/link";
 
 const Navbar = () => {
   const router = useRouter();
@@ -26,46 +24,38 @@ const Navbar = () => {
 
   return (
     <>
-      <nav
-        className="sticky top-0 z-50 data-[state=active]:bg-background 
-      dark:data-[state=active]:bg-background/80 backdrop-blur-sm transition-all 
-      duration-300 outline
-      "
-      >
-        <section className="flex items-center justify-between p-4 px-4">
-          <Link href="/">
-            <h2 className="font-bold text-md flex items-center gap-2">
-              <Profile />
-              Sobahusn
-            </h2>
-          </Link>
-
+      <nav className="flex sm:justify-center sm:sticky z-50 top-0">
+        <section className="flex items-center justify-center p-4 px-4">
           {/* Desktop Menu */}
           <Tabs
             value={pathname}
-            className="hidden sm:block"
+            className="hidden sm:block mx-auto outline p-2 rounded-md 
+            data-[state=active]:bg-background 
+            dark:data-[state=active]:bg-background/80 backdrop-blur-sm
+            "
             onValueChange={handleTabChange}
           >
-            <TabsList className="flex gap-4">
+            <TabsList className="flex gap-4 items-center">
               {menuNavbar.map((menu, index) => (
                 <TabsTrigger
                   key={index}
                   value={menu.link}
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:scale-105 transition-transform"
                   aria-label={menu.name}
                   tittle={menu.name}
                 >
-                  {menu.icon}
-                  {menu.name}
+                    <figure>{menu.icon}</figure>
+                    <p>{menu.name}</p>
                 </TabsTrigger>
               ))}
               <ThemeModeToggle />
             </TabsList>
           </Tabs>
+        </section>
 
-          {/* Mobile Menu Button */}
-          <div className="sm:hidden flex items-center gap-2">
-            <ThemeModeToggle />
+        {/* Mobile Menu Button */}
+        <section className="flex ">
+          <nav className="sm:hidden flex items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -73,7 +63,8 @@ const Navbar = () => {
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </div>
+            <ThemeModeToggle />
+          </nav>
         </section>
       </nav>
     </>

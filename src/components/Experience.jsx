@@ -10,7 +10,7 @@ const Experience = () => {
       className="min-h-screen flex flex-col py-24"
     >
       <header className="flex flex-col justify-center">
-        <h2 className="text-lg md:text-xl lg:text-2xl text-center font-semibold underline underline-offset-4 ">
+        <h2 className="text-lg md:text-xl lg:text-2xl text-center font-semibold underline underline-offset-6 ">
           My Experience
         </h2>
         <p className="text-sm md:text-md lg:text-lg text-center">

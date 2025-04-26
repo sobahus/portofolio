@@ -1,9 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../assets/css/chillax.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-chillax-extralight: "Chillax-Extralight";
+  --font-chillax-light: "Chillax-Light";
+  --font-chillax-regular: "Chillax-Regular";
+  --font-chillax-medium: "Chillax-Medium";
+  --font-chillax-semibold: "Chillax-Semibold";
+  --font-chillax-bold: "Chillax-Bold";
+  --font-chillax-variable: "Chillax-Variable";
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
