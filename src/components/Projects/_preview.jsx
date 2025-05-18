@@ -1,47 +1,89 @@
 "use client";
 
-import { Button } from "../ui/button";
+import {
+  MorphingDialog,
+  MorphingDialogTrigger,
+  MorphingDialogContent,
+  MorphingDialogTitle,
+  MorphingDialogImage,
+  MorphingDialogSubtitle,
+  MorphingDialogClose,
+  MorphingDialogDescription,
+  MorphingDialogContainer,
+} from "@/components/ui/morphing-dialog";
 
 const Preview = () => {
   return (
     <>
       <section className="min-h-screen">
-        <header className="flex justify-center items-center">
-          <h1 className="text-2xl font-semibold underline underline-offset-4">
+        <header className="flex justify-center mb-12">
+          <h2 className="text-lg md:text-xl lg:text-3xl font-semibold">
             Projects
-          </h1>
+          </h2>
         </header>
 
-        <section className="grid justify-center py-12">
-          <article
-            className="flex gap-4 overflow-hidden rounded-md border p-2 w-full max-w-xl
-            hover:shadow-sm cursor-pointer hover:scale-102 transition-all duration-200
-          "
+        <article className="flex justify-center p-4 px-6">
+          <MorphingDialog
+            transition={{ type: "spring", bounce: 0.05, duration: 0.25 }}
           >
-            <figure>
-              <img
-                src="/profile-2d.png"
-                alt="example"
-                className="w-40 h-40 rounded-md object-cover"
-              />
-            </figure>
-            <div className="flex flex-col justify-between">
-              <header>
-                <h2 className="font-semibold text-xl">Example</h2>
-              </header>
-              <label></label>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad,
-                commodi?
-              </p>
-              <footer className="mt-4 flex justify-end">
-                <Button variant="outline" size="xs" className="text-xs">
-                  Sobahusn
-                </Button>
-              </footer>
-            </div>
-          </article>
-        </section>
+            {/* Trigger OnClick Dialog */}
+            <MorphingDialogTrigger className="w-full max-w-xs overflow-hidden rounded-md outline shadow-sm">
+              <figure>
+                <MorphingDialogImage
+                  src="/profile-2d.png"
+                  alt="example"
+                  className="w-full h-60 object-cover"
+                />
+              </figure>
+
+              {/* Preview Conten Dialog */}
+              <section className="p-4">
+                <header className="text-left">
+                  <MorphingDialogTitle className="font-semibold text-xl">
+                    Project 1
+                  </MorphingDialogTitle>
+                  <MorphingDialogSubtitle className="text-sm">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Consectetur error provident quod eaque dolores sequi officia
+                  </MorphingDialogSubtitle>
+                </header>
+              </section>
+            </MorphingDialogTrigger>
+
+            {/* Container Dialog */}
+            <MorphingDialogContainer>
+              <MorphingDialogContent className="flex justify-center max-w-3xl outline overflow-hidden rounded-md bg-accent backdrop-blur-xl z-60">
+                <MorphingDialogImage
+                  src="/profile-2d.png"
+                  alt="example"
+                  className="w-60 h-60 object-cover"
+                />
+                <div className="p-4">
+                  <header>
+                    <MorphingDialogTitle className="text-lg font-semibold">
+                      Project 1
+                    </MorphingDialogTitle>
+                    <MorphingDialogSubtitle>Hello-Word!</MorphingDialogSubtitle>
+                  </header>
+                  <MorphingDialogDescription
+                    disableLayoutAnimation
+                    variant={{
+                      initial: { opacity: 0, scale: 0.8, y: 100 },
+                      animate: { opacity: 1, scale: 1, y: 0 },
+                      exit: { opacity: 0, scale: 0.8, y: 100 },
+                    }}
+                  >
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Sint delectus ad ullam error praesentium corrupti
+                      laboriosam consequatur natus neque minus.
+                    </p>
+                  </MorphingDialogDescription>
+                </div>
+              </MorphingDialogContent>
+            </MorphingDialogContainer>
+          </MorphingDialog>
+        </article>
       </section>
     </>
   );

@@ -12,13 +12,8 @@ const RootLayout = ({ children }) => {
         <title>Sobahusn Portofolio</title>
       </head>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Navbar />
           <main>{children}</main>
         </ThemeProvider>
       </body>

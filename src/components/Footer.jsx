@@ -26,7 +26,7 @@ const Footer = () => {
             <h1 className="text-xl font-semibold">Sobahusn</h1>
           </Link>
           <p className="text-sm">My Personal Blog</p>
-          <Link href="https://blog.cybersnsa.my.id/" target="_blank">
+          <Link href="https://hashnode.niam.my.id/" target="_blank">
             <Button className="w-full rounded-none">
               <figure>
                 <Rss className="w-4 h-4" />

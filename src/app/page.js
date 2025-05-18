@@ -1,6 +1,6 @@
 import Experience from "@/components/Experience";
 import HeroSection from "@/components/HeroSection";
-import TechStack from "@/components/TechStack";
+import TechStack from "@/components/TechSkills";
 import _preview from "@/components/Projects/_preview";
 import Footer from "@/components/Footer";
 

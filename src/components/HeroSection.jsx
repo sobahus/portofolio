@@ -1,57 +1,48 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Instagram } from "lucide-react";
-import GitHub from "./icons/Github";
-import LinkedIn from "./icons/LinkedIn";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ContainerTextFlip } from "@/components/ui/container-text-flip";
+import { ShootingStars } from "@/components/ui/shooting-start";
 
 const HeroSection = () => {
-  const iconList = [
-    {
-      name: "Github",
-      icon: <GitHub className="h-5 w-5" />,
-      link: "https://github.com/sobahus",
-    },
-    {
-      name: "Linkedin",
-      icon: <LinkedIn className="h-5 w-5" />,
-      link: "https://linkedin.com/in/sobahusn-niam/",
-    },
-    {
-      name: "Instagram",
-      icon: <Instagram className="h-5 w-5" />,
-      link: "https://instagram.com/sobahusn27",
-    },
-  ];
-
   return (
     <section
-      className="min-h-[calc(105dvh-100px)] flex justify-center items-center"
+      className="min-h-[calc(110dvh-100px)] flex justify-center items-center"
       aria-label="hero"
     >
       <aside>
-        <header className="space-y-4 w-full max-w-xl text-center" aria-label="">
-          <h1 className="font-chillax-semibold text-xl md:text-2xl lg:text-6xl">
-            Hello, I'am{" "}
-            <span className="bg-primary dark:bg-white text-white dark:text-black rounded-md px-2">
-              Ni'am
-            </span>
+        <header className="space-y-4 w-full max-w-3xl justify-center items-center text-center">
+          <h1 className="font-chillax-semibold text-3xl md:text-4xl lg:text-5xl">
+            Hello, I'am
+            <ContainerTextFlip
+              className="bg-black text-white dark:bg-accent px-0 py-2 ml-2 rounded-none"
+              words={["Ni'am", "Network Engineer","Cyber Security", "Web Developer"]}
+            />
           </h1>
-          <p className="font-chillax-regular text-md md:text-lg lg:text-xl">
-            I am a Front-End Developer, I am interested in web development with
-            responsive and modern design.
+          <p className="font-chillax-regular text-lg md:text-lg lg:text-xl leading-relaxed">
+            I am a Network Engineer, I am also interested in Web Development
+            with responsive and modern design, and interested in Cyber Security.
           </p>
         </header>
+        <ShootingStars starWidth="10" starHeight="2" className="-z-4" />
 
         <footer className="flex justify-center gap-2 mt-4 py-4">
           <Button>
-            <Link href="/" className="focus:outline-none">
+            <Link
+              href="/Resume/[ID] CV Resume M.Sobahus Sururin Niam.pdf"
+              target="_blank"
+              className="focus:outline-none"
+            >
               Download CV
             </Link>
           </Button>
           <Button variant="outline">
-            <Link href="/about" className="flex items-center gap-[4px] focus:outline-none">
+            <Link
+              href="/about"
+              className="flex items-center gap-[4px] focus:outline-none"
+            >
               About Me
               <ArrowRight />
             </Link>
