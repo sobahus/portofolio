@@ -3,7 +3,6 @@ title: "Guide Installation Arch Linux (Panduan Install Arch Linux)"
 datePublished: Thu Dec 19 2024 14:20:28 GMT+0000 (Coordinated Universal Time)
 cuid: cm4vescsb001509mkcaszeupc
 slug: archlinux-installation
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1734576959828/3ed035a5-0d48-4afe-82d3-6e9975e33374.png
 tags: linux, archlinux
 
 ---
